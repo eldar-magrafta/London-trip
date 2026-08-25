@@ -1,0 +1,2613 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>לונדון 2026 — סנטרל · קמדן · שורדיץ׳</title>
+
+    <!-- ===== Link preview (WhatsApp / Facebook / iMessage / Slack) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="לונדון 2026">
+    <meta property="og:url" content="https://eldar-magrafta.github.io/london2026/">
+    <meta property="og:title" content="לונדון 2026 — סנטרל · קמדן · שורדיץ׳">
+    <meta property="og:description" content="מוזיאונים, שווקים ופאבים — סנטרל, קמדן, נוטינג היל ושורדיץ׳.">
+    <meta property="og:image" content="https://eldar-magrafta.github.io/london2026/preview.jpg?v=3">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="he_IL">
+    <!-- Twitter/X also reads these -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="לונדון 2026 — סנטרל · קמדן · שורדיץ׳">
+    <meta name="twitter:description" content="מוזיאונים, שווקים ופאבים — סנטרל, קמדן, נוטינג היל ושורדיץ׳.">
+    <meta name="twitter:image" content="https://eldar-magrafta.github.io/london2026/preview.jpg?v=3">
+    <!-- ===== PWA / offline (installable to home screen) ===== -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#C8102E">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="לונדון 2026">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=3">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png?v=3">
+    <link rel="shortcut icon" href="icon-192.png?v=3">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Rubik:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --paper:#F6EEDC;
+            --paper-deep:#EFE3C7;
+            --ink:#2B2420;
+            --blue:#012169;        /* Union Jack blue */
+            --blue-deep:#011449;
+            --terracotta:#C8102E;  /* Union Jack red */
+            --terracotta-deep:#A30D22;
+            --lemon:#E8B43A;
+            --cypress:#2F4B3C;
+            --line:#c9b78f;
+        }
+
+        *{box-sizing:border-box;}
+
+        html{scroll-behavior:smooth;}
+
+        body{
+            margin:0;
+            overflow-x:hidden;
+            background:var(--paper);
+            background-image:
+                    radial-gradient(circle at 15% 8%, rgba(1,33,105,0.05), transparent 40%),
+                    radial-gradient(circle at 85% 92%, rgba(200,16,46,0.06), transparent 45%);
+            color:var(--ink);
+            font-family:'Rubik', sans-serif;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            text-rendering:optimizeLegibility;
+            line-height:1.5;
+            /* block text selection / copy / long-press callout across the app */
+            -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
+            -webkit-touch-callout:none;
+        }
+        /* keep the editable fields fully usable (type, select, edit) */
+        input, textarea{
+            -webkit-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text;
+            -webkit-touch-callout:default;
+        }
+
+        .lat{ direction:ltr; unicode-bidi:isolate; font-family:'Fraunces', serif; }
+
+        /* ---------- HERO ---------- */
+        .hero{
+            position:relative;
+            padding:5.5rem 1.5rem 4.5rem;
+            text-align:center;
+            overflow:hidden;
+            /* Union Jack (Britain) motif behind the calendar card:
+               fade-to-paper overlay on top, then the St George red cross with
+               white fimbriation, the diagonal St Patrick/St Andrew saltire,
+               all over the Union blue field. */
+            background:
+                    linear-gradient(180deg, rgba(246,238,220,0) 0%, rgba(246,238,220,0) 78%, var(--paper) 100%),
+                    /* St George red cross — vertical + horizontal */
+                    linear-gradient(to right, transparent calc(50% - 15px), #C8102E calc(50% - 15px), #C8102E calc(50% + 15px), transparent calc(50% + 15px)),
+                    linear-gradient(to bottom, transparent calc(50% - 15px), #C8102E calc(50% - 15px), #C8102E calc(50% + 15px), transparent calc(50% + 15px)),
+                    /* white fimbriation of the upright cross */
+                    linear-gradient(to right, transparent calc(50% - 27px), #FFFFFF calc(50% - 27px), #FFFFFF calc(50% + 27px), transparent calc(50% + 27px)),
+                    linear-gradient(to bottom, transparent calc(50% - 27px), #FFFFFF calc(50% - 27px), #FFFFFF calc(50% + 27px), transparent calc(50% + 27px)),
+                    /* red diagonal saltire */
+                    linear-gradient(to top left, transparent calc(50% - 5px), #C8102E calc(50% - 5px), #C8102E calc(50% + 5px), transparent calc(50% + 5px)),
+                    linear-gradient(to top right, transparent calc(50% - 5px), #C8102E calc(50% - 5px), #C8102E calc(50% + 5px), transparent calc(50% + 5px)),
+                    /* white diagonal saltire (St Andrew) */
+                    linear-gradient(to top left, transparent calc(50% - 13px), #FFFFFF calc(50% - 13px), #FFFFFF calc(50% + 13px), transparent calc(50% + 13px)),
+                    linear-gradient(to top right, transparent calc(50% - 13px), #FFFFFF calc(50% - 13px), #FFFFFF calc(50% + 13px), transparent calc(50% + 13px)),
+                    /* Union blue field */
+                    #012169;
+            color:var(--paper);
+        }
+        .hero::before{
+            content:"";
+            position:absolute; inset:0;
+            background-image:
+                    radial-gradient(1.5px 1.5px at 20% 30%, rgba(246,238,220,0.35) 0, transparent 100%),
+                    radial-gradient(1.5px 1.5px at 70% 15%, rgba(246,238,220,0.3) 0, transparent 100%),
+                    radial-gradient(1.5px 1.5px at 45% 55%, rgba(246,238,220,0.25) 0, transparent 100%),
+                    radial-gradient(1.5px 1.5px at 85% 40%, rgba(246,238,220,0.3) 0, transparent 100%),
+                    radial-gradient(1.5px 1.5px at 10% 70%, rgba(246,238,220,0.2) 0, transparent 100%);
+            pointer-events:none;
+        }
+        /* ---------- HERO CALENDAR ---------- */
+        .hero-cal{
+            position:relative;
+            display:block;
+            width:100%;
+            max-width:1040px;
+            margin:0 auto;
+            padding:1.9rem 1.7rem 2.1rem;
+            background:rgba(19,26,22,0.44);
+            backdrop-filter:blur(10px) saturate(1.1);
+            -webkit-backdrop-filter:blur(10px) saturate(1.1);
+            border:1px solid rgba(246,238,220,0.22);
+            border-radius:18px;
+            box-shadow:0 30px 60px -28px rgba(11,20,15,0.65),
+                       inset 0 1px 0 rgba(246,238,220,0.12);
+        }
+        .hero-cal-eyebrow{
+            font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+            letter-spacing:.14em; text-transform:uppercase; font-size:.78rem;
+            color:var(--lemon); margin:0 0 .3rem;
+        }
+        .hero-cal-title{
+            font-family:'Frank Ruhl Libre', serif; font-weight:900;
+            font-size:clamp(1.85rem, 5vw, 2.9rem); margin:0 0 1.2rem; line-height:1;
+            letter-spacing:-.015em;
+            text-shadow:0 2px 24px rgba(11,20,15,0.35);
+        }
+        /* no horizontal scroll — the grid always fits the screen width */
+        .cal-scroll{ overflow:visible; }
+        .cal-grid{
+            display:grid; grid-template-columns:repeat(7, 1fr); gap:.4rem;
+            min-width:0;
+        }
+        .cal-dow{
+            font-family:'Fraunces', serif; font-weight:600; font-size:.95rem;
+            color:var(--lemon); text-align:center; padding:.2rem 0 .5rem;
+        }
+        .cal-cell{
+            position:relative;
+            min-width:0;  /* allow the 1fr track to shrink so cells never overflow the box */
+            min-height:74px; padding:.5rem .55rem; border-radius:10px;
+            background:rgba(246,238,220,0.08);
+            border:1px solid rgba(246,238,220,0.16);
+            text-align:start;
+            display:flex; flex-direction:column; gap:.28rem;
+        }
+        .cal-cell.empty{ background:transparent; border:1px dashed rgba(246,238,220,0.1); }
+        .cal-date{
+            font-family:'Fraunces', serif; font-weight:600; font-size:.82rem;
+            color:rgba(246,238,220,0.7);
+        }
+        .cal-place{ font-size:.86rem; line-height:1.35; color:var(--paper); font-weight:600; overflow-wrap:anywhere; }
+        /* region accents */
+        .cal-cell.r-central{ background:rgba(200,16,46,0.30); border-color:rgba(200,16,46,0.5); }
+        .cal-cell.r-soho{ background:rgba(1,33,105,0.42); border-color:rgba(120,116,170,0.5); }
+        .cal-cell.r-camden{ background:rgba(216,166,58,0.24); border-color:rgba(216,166,58,0.5); }
+        .cal-cell.r-nottinghill{ background:rgba(96,120,80,0.34); border-color:rgba(140,170,110,0.5); }
+        .cal-cell.r-shoreditch{ background:rgba(1,33,105,0.5); border-color:rgba(150,146,200,0.55); }
+        .cal-cell.r-greenwich{ background:rgba(63,120,120,0.30); border-color:rgba(90,180,180,0.5); }
+        .cal-cell.r-daytrip{ background:rgba(47,75,60,0.34); border-color:rgba(120,150,110,0.5); }
+        /* current day — neon green with a halo on all four sides */
+        .cal-cell.today{
+            z-index:2;
+            border:2px solid #39ff14;
+            box-shadow:0 0 6px rgba(57,255,20,0.95),
+                       0 0 14px rgba(57,255,20,0.6),
+                       0 0 22px rgba(57,255,20,0.35);
+        }
+        .cal-cell.today .cal-date{ color:#39ff14; }
+        .cal-cell.travel{
+            background:rgba(246,238,220,0.14);
+            border:1px solid var(--lemon);
+        }
+        /* corner icon badge on the cell itself (RTL → top-left corner) */
+        .cal-cell.travel::after,
+        .cal-cell.ferry::after{
+            position:absolute; top:.4rem; left:.4rem;
+            width:1.35rem; height:1.35rem;
+            display:flex; align-items:center; justify-content:center;
+            font-size:.78rem; line-height:1;
+            border-radius:50%;
+            background:var(--lemon); color:var(--blue-deep);
+            box-shadow:0 1px 4px -1px rgba(11,20,15,.5);
+        }
+        .cal-cell.travel::after{ content:"✈"; }
+        .cal-cell.ferry::after{ content:"⛴"; }
+        /* keep text clear of the badge */
+        .cal-cell.travel .cal-date,
+        .cal-cell.ferry .cal-date{ padding-inline-start:1.7rem; }
+
+        /* ---------- TIMELINE WRAPPER ---------- */
+        .journal{
+            position:relative;
+            max-width:900px; margin:0 auto; padding:4rem 1.25rem 6rem;
+        }
+        .spine{
+            position:absolute; top:0; bottom:120px; right:calc(50% - 1px);
+            width:2px;
+            background:repeating-linear-gradient(to bottom, var(--terracotta) 0 8px, transparent 8px 16px);
+            z-index:0;
+        }
+        @media (max-width:720px){ .spine{ right:26px; } }
+
+        .day{
+            position:relative; z-index:1;
+            margin:0 0 3.2rem;
+        }
+        .day-inner{
+            background:var(--paper-deep);
+            border:1px solid var(--line);
+            border-radius:2px;
+            box-shadow: 0 1px 0 rgba(43,36,32,.05), 0 18px 30px -22px rgba(43,36,32,.35);
+            padding:2rem 2.1rem 2.2rem;
+            position:relative;
+        }
+
+        .day-tag{
+            position:absolute; top:-18px;
+            display:flex; align-items:center; gap:.6rem;
+        }
+        .day-tag{ right:-14px; }
+        @media (max-width:720px){
+            .day-tag{ right:-14px; left:auto; }
+        }
+
+        .day-num{
+            width:52px; height:52px; border-radius:50%;
+            background:var(--terracotta);
+            color:var(--paper);
+            display:flex; align-items:center; justify-content:center;
+            font-family:'Frank Ruhl Libre', serif; font-weight:700; font-size:1.4rem;
+            box-shadow:0 6px 14px -6px rgba(156,59,33,.6), 0 0 0 4px var(--paper);
+            flex-shrink:0;
+        }
+        .day-meta{
+            background:var(--blue-deep); color:var(--paper);
+            padding:.5rem 1rem .55rem; border-radius:3px;
+            font-size:.82rem; white-space:nowrap;
+            box-shadow:0 6px 14px -8px rgba(22,56,66,.6);
+        }
+        .day-meta b{ font-family:'Fraunces', serif; font-weight:600; }
+
+        .day-head{ margin:1.6rem 0 1.6rem; }
+        .day-place{
+            font-family:'Frank Ruhl Libre', serif; font-weight:700;
+            font-size:1.7rem; color:var(--blue-deep); margin:0 0 .3rem;
+        }
+        .day-place .lat{ color:var(--terracotta); font-weight:600; font-size:1.15rem; }
+        .day-rule{ height:2px; width:64px; background:var(--lemon); border:none; margin:.8rem 0 0; }
+
+        .items{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1.1rem; }
+        .item{ display:flex; gap:.9rem; align-items:flex-start; }
+        .item .dot{
+            flex-shrink:0; width:9px; height:9px; margin-top:.55rem;
+            background:var(--cypress); border-radius:50%;
+        }
+        .item .body{ flex:1; }
+        .item .what{ font-weight:600; color:var(--ink); font-size:1.02rem; }
+        .item .where{
+            font-family:'Fraunces', serif; font-style:italic; color:var(--terracotta-deep);
+            font-size:.96rem; margin-inline-start:.4rem;
+        }
+        a.where{
+            display:block;
+            text-decoration:none; border-bottom:1px dotted var(--terracotta-deep);
+            transition:opacity .15s ease;
+            width:fit-content;
+        }
+        a.where:hover, a.where:active{ opacity:.7; }
+        a.where::after{
+            content:"📍"; font-size:.7em; margin-inline-start:.3em; opacity:.85;
+        }
+        .item .note{ margin:.3rem 0 0; color:#54483d; font-size:.9rem; line-height:1.75; }
+        .item .note .lat{ font-style:italic; color:var(--blue-deep); }
+        .tag-time{
+            display:inline-block; font-family:'Fraunces', serif; font-weight:600;
+            color:var(--paper); background:var(--cypress);
+            border-radius:3px; padding:.05rem .5rem; font-size:.78rem; margin-inline-end:.4rem;
+        }
+        .opts{ margin:.4rem 0 0; padding-inline-start:1.1rem; font-size:.88rem; color:#54483d; line-height:1.8; list-style:none; }
+        .opts li{ margin:.3rem 0; }
+        .opts a.where{ display:inline; }
+
+        .transit-note{
+            display:flex; align-items:center; gap:.6rem;
+            margin-top:1.6rem; padding:.8rem 1rem;
+            background:rgba(31,78,95,0.08); border-radius:4px;
+            font-size:.86rem; color:var(--blue-deep);
+        }
+        .transit-note svg{ width:22px; height:22px; flex-shrink:0; }
+
+        .single-line{
+            font-size:1.05rem; line-height:1.9; color:var(--ink);
+        }
+
+        .map-figure{ margin:1.6rem 0 0; text-align:center; }
+        .map-figure img{ max-width:100%; border-radius:4px; border:1px solid var(--line); }
+        .map-figure figcaption{
+            margin-top:.6rem; font-family:'Fraunces', serif; font-style:italic;
+            font-size:.85rem; color:var(--terracotta-deep);
+        }
+
+        .transit-marker{
+            display:flex; justify-content:center; margin:-1.2rem 0 2.2rem; position:relative; z-index:2;
+        }
+        .transit-marker span{
+            display:flex; align-items:center; gap:.5rem;
+            background:var(--lemon); color:var(--blue-deep);
+            font-family:'Fraunces', serif; font-weight:600; font-size:.85rem;
+            padding:.5rem 1.1rem; border-radius:999px;
+            box-shadow:0 8px 16px -8px rgba(232,180,58,.7);
+        }
+        .transit-marker svg{ width:18px; height:18px; }
+
+        /* ---------- CLOSING ---------- */
+        .closing{
+            position:relative; z-index:1;
+            text-align:center; margin-top:1rem;
+            padding:2.6rem 2rem; background:var(--blue-deep); color:var(--paper);
+            border-radius:4px;
+        }
+        .closing .plane{ width:34px; height:34px; margin-bottom:.8rem; color:var(--lemon); }
+        .closing h3{
+            font-family:'Frank Ruhl Libre', serif; font-weight:700; font-size:1.5rem; margin:0 0 .4rem;
+        }
+        .closing p{ margin:0; color:rgba(246,238,220,.8); font-size:.95rem; }
+
+        footer{
+            text-align:center; padding:2.2rem 1rem 3rem;
+            font-family:'Fraunces', serif; font-style:italic; color:#8a7a5e; font-size:.85rem;
+        }
+
+        /* ---------- COLLAPSIBLE ---------- */
+        .day-head{ cursor:pointer; user-select:none; }
+        .day-head::after{
+            content:'▲'; display:inline-block; margin-inline-start:.6rem;
+            font-size:.7rem; color:var(--terracotta); transition:transform .2s ease;
+        }
+        .day.collapsed .day-head::after{ transform:rotate(180deg); }
+        .day-content{
+            max-height:2000px; overflow:hidden;
+            transition:max-height .3s ease, opacity .2s ease;
+        }
+        .day.collapsed .day-content{
+            max-height:0; opacity:0;
+        }
+
+        /* ---------- TOP NAVIGATION ---------- */
+        .top-nav{
+            display:grid;
+            grid-template-columns:repeat(4, minmax(0, 150px));
+            justify-content:center;
+            gap:.6rem .8rem;
+            padding:.9rem 1.5rem;
+            background:rgba(239,227,199,0.82);
+            backdrop-filter:blur(12px) saturate(1.15);
+            -webkit-backdrop-filter:blur(12px) saturate(1.15);
+            border-bottom:1px solid rgba(201,183,143,0.55);
+            box-shadow:0 6px 24px -18px rgba(43,36,32,0.7);
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+        .top-nav-tab{
+            width:100%;
+            padding:.55rem 1rem;
+            background:rgba(246,238,220,0.55);
+            border:1px solid rgba(201,183,143,0.7);
+            border-radius:11px;
+            color:var(--ink);
+            font-family:'Assistant', sans-serif;
+            font-size:1rem;
+            font-weight:700;
+            letter-spacing:-.01em;
+            cursor:pointer;
+            box-shadow:0 1px 2px rgba(43,36,32,0.04);
+            transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+            white-space:nowrap;
+            text-align:center;
+        }
+        @media (hover:hover){
+            .top-nav-tab:hover{
+                background:var(--lemon);
+                color:var(--ink);
+                border-color:var(--lemon);
+                transform:translateY(-1px);
+            }
+        }
+        .top-nav-tab.active{
+            background:var(--terracotta);
+            color:var(--paper);
+            border-color:var(--terracotta);
+            box-shadow:0 8px 18px -8px rgba(165,25,49,0.6);
+        }
+        @media (max-width:560px){
+            .top-nav{
+                grid-template-columns:repeat(4, 1fr);
+                gap:.4rem;
+                padding:.7rem .35rem;
+                justify-content:stretch;
+            }
+            .top-nav-tab{
+                padding:.5rem .15rem;
+                font-size:clamp(.6rem, 3.1vw, .82rem);
+                border-radius:9px;
+            }
+        }
+        .main-panel{
+            display:none;
+        }
+        .main-panel.active{
+            display:block;
+        }
+
+        /* ---------- EXTRAS SECTION ---------- */
+        .extras-section{
+            max-width:800px;
+            margin:3rem auto;
+            padding:0 1.5rem;
+        }
+        .extras-main-tabs{
+            display:flex;
+            justify-content:center;
+            gap:1rem;
+            margin-bottom:1.5rem;
+        }
+        .extras-main-tab{
+            padding:.8rem 1.5rem;
+            background:var(--paper-deep);
+            border:2px solid var(--line);
+            border-radius:8px;
+            font-family:'Frank Ruhl Libre', serif;
+            font-size:1.2rem;
+            font-weight:700;
+            cursor:pointer;
+            transition:all .2s ease;
+        }
+        .extras-main-tab:hover{
+            background:var(--lemon);
+            color:var(--ink);
+        }
+        .extras-main-tab.active{
+            background:var(--terracotta);
+            color:var(--paper);
+            border-color:var(--terracotta);
+        }
+        .extras-panel{
+            display:none;
+        }
+        .extras-panel.active{
+            display:block;
+        }
+        .sub-tabs{
+            display:flex;
+            justify-content:center;
+            gap:.5rem;
+            margin-bottom:1.5rem;
+            flex-wrap:wrap;
+        }
+        .sub-tab{
+            padding:.5rem 1.15rem;
+            background:rgba(246,238,220,0.6);
+            border:1px solid rgba(201,183,143,0.7);
+            border-radius:999px;
+            color:var(--ink);
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            cursor:pointer;
+            transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+        }
+        @media (hover:hover){
+            .sub-tab:hover{
+                background:var(--lemon);
+                color:var(--ink);
+                transform:translateY(-1px);
+            }
+        }
+        .sub-tab.active{
+            background:var(--terracotta);
+            color:var(--paper);
+            border-color:var(--terracotta);
+            box-shadow:0 8px 18px -9px rgba(165,25,49,0.6);
+        }
+        .sub-content{
+            display:none;
+            background:var(--paper-deep);
+            border:1px solid rgba(201,183,143,0.6);
+            border-radius:16px;
+            padding:1.6rem;
+            box-shadow:0 24px 48px -30px rgba(43,36,32,0.5),
+                       inset 0 1px 0 rgba(255,255,255,0.35);
+        }
+        .sub-content.active{
+            display:block;
+        }
+        .sub-intro{
+            font-style:italic;
+            color:var(--blue);
+            margin-bottom:1.2rem;
+            line-height:1.6;
+        }
+        /* static reference pulled from the trip plan (read-only) */
+        .plan-info{
+            margin:0 0 1.25rem;
+            padding:1rem 1.15rem;
+            background:rgba(232,180,58,.12);
+            border:1px solid rgba(201,183,143,0.55);
+            border-inline-start:4px solid var(--lemon);
+            border-radius:14px;
+            box-shadow:0 10px 24px -20px rgba(43,36,32,0.5);
+        }
+        .plan-info-tag{
+            display:inline-block;
+            font-family:'Fraunces', serif;
+            font-weight:600;
+            font-size:.72rem;
+            letter-spacing:.06em;
+            color:var(--terracotta-deep);
+            margin-bottom:.5rem;
+        }
+        .plan-info ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+            display:flex;
+            flex-direction:column;
+            gap:.55rem;
+        }
+        .plan-info li{
+            line-height:1.55;
+            color:var(--ink);
+            direction:rtl;
+            text-align:right;
+        }
+        .plan-info li strong{ color:var(--blue-deep); }
+        .plan-info .pi-note{
+            display:block;
+            font-size:.88rem;
+            color:#54483d;
+            opacity:.9;
+        }
+        .plan-info a{ color:var(--terracotta-deep); }
+        /* location links — same look as the italy-trip לוז tab (Fraunces italic, dotted underline, 📍) */
+        .plan-info a.maplink{
+            font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+            color:var(--terracotta-deep); text-decoration:none;
+            border-bottom:1px dotted var(--terracotta-deep);
+            transition:opacity .15s ease;
+        }
+        .plan-info a.maplink.lat{ direction:ltr; unicode-bidi:isolate; }
+        .plan-info a.maplink:active{ opacity:.7; }
+        @media (hover:hover){
+            .plan-info a.maplink:hover{ opacity:.7; }
+        }
+        .plan-info a.maplink::after{
+            content:"📍"; font-size:.7em; margin-inline-start:.25em; opacity:.85;
+        }
+        /* small icon-button link (e.g. Instagram) — like the tiktok/tripadvisor buttons */
+        .icon-btn{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            width:30px;
+            height:30px;
+            border-radius:9px;
+            border:1px solid rgba(201,183,143,0.7);
+            background:var(--paper);
+            vertical-align:middle;
+            box-shadow:0 1px 2px rgba(43,36,32,0.05);
+            transition:all .18s ease;
+            text-decoration:none;
+        }
+        @media (hover:hover){
+            .icon-btn:hover{ background:var(--lemon); border-color:var(--lemon); transform:translateY(-1px); }
+        }
+        .icon-btn svg{ width:17px; height:17px; color:var(--ink); }
+        .icon-btn-map svg{ color:var(--terracotta); }
+        /* itinerary day heading */
+        .plan-day{
+            font-family:'Frank Ruhl Libre', serif;
+            font-weight:700;
+            font-size:1.08rem;
+            color:var(--blue-deep);
+            margin:0 0 .7rem;
+            direction:rtl;
+            text-align:right;
+        }
+        .plan-day small{
+            display:inline-block;
+            font-family:'Fraunces', serif;
+            font-style:italic;
+            font-weight:500;
+            font-size:.82rem;
+            color:var(--terracotta-deep);
+            margin-inline-start:.4rem;
+        }
+        /* currency converter */
+        .currency-section{ max-width:520px; margin:2.5rem auto; padding:0 1.5rem; }
+        .currency-card{
+            background:var(--paper-deep); border:1px solid rgba(201,183,143,0.6);
+            border-radius:16px; padding:1.6rem;
+            box-shadow:0 24px 48px -30px rgba(43,36,32,0.5),
+                       inset 0 1px 0 rgba(255,255,255,0.35);
+        }
+        .currency-row{ display:flex; align-items:center; gap:.7rem; margin-bottom:.7rem; }
+        .currency-row label{
+            flex:0 0 7rem; font-weight:600; color:var(--blue-deep); font-size:.9rem;
+            display:flex; align-items:center; gap:.4rem;
+        }
+        .currency-row input{
+            flex:1; min-width:0; padding:.6rem .85rem; border:1px solid var(--line);
+            border-radius:8px; background:var(--paper); font-size:1.05rem; direction:ltr; text-align:right;
+            font-variant-numeric:tabular-nums; color:var(--ink);
+        }
+        .currency-row input:focus{ outline:none; border-color:var(--terracotta); box-shadow:0 0 0 3px rgba(165,25,49,.12); }
+        .currency-note{ margin-top:.9rem; font-size:.78rem; color:var(--blue); opacity:.8; font-style:italic; }
+        /* ---------- USER ITEM CARDS ---------- */
+        .item-list{
+            display:flex;
+            flex-direction:column;
+            gap:.75rem;
+        }
+
+        /* ---------- confirm (delete) dialog ---------- */
+        .confirm-overlay{
+            position:fixed; inset:0; z-index:1000;
+            display:flex; align-items:center; justify-content:center;
+            padding:1.5rem;
+            background:rgba(28,26,48,0.55);
+            -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
+            animation:confirmFade .15s ease;
+        }
+        @keyframes confirmFade{ from{opacity:0;} to{opacity:1;} }
+        .confirm-box{
+            direction:rtl;
+            width:min(340px, 100%);
+            background:var(--paper);
+            border:1px solid var(--line);
+            border-radius:16px;
+            box-shadow:0 18px 50px rgba(28,26,48,0.35);
+            padding:1.4rem 1.3rem 1.15rem;
+            text-align:center;
+            animation:confirmPop .16s ease;
+        }
+        @keyframes confirmPop{ from{transform:scale(.94); opacity:0;} to{transform:scale(1); opacity:1;} }
+        .confirm-msg{
+            font-family:'Frank Ruhl Libre', serif;
+            font-weight:700;
+            font-size:1.15rem;
+            color:var(--ink);
+            line-height:1.5;
+            margin-bottom:1.2rem;
+        }
+        .confirm-actions{ display:flex; gap:.7rem; }
+        .confirm-actions button{
+            flex:1;
+            padding:.7rem .5rem;
+            border-radius:10px;
+            font-family:'Rubik', sans-serif;
+            font-weight:600;
+            font-size:1rem;
+            cursor:pointer;
+            border:1px solid var(--line);
+        }
+        .confirm-yes{ background:var(--terracotta); color:#fff; border-color:var(--terracotta-deep); }
+        .confirm-cancel{ background:var(--paper-deep); color:var(--ink); }
+        @media (hover:hover){
+            .confirm-yes:hover{ background:var(--terracotta-deep); }
+            .confirm-cancel:hover{ background:#e4d5b3; }
+        }
+
+        /* ---------- pull-to-refresh ---------- */
+        .ptr{
+            position:fixed;
+            top:10px; left:50%; margin-left:-19px;
+            width:38px; height:38px;
+            border-radius:50%;
+            background:var(--paper);
+            border:1px solid var(--line);
+            box-shadow:0 8px 20px -8px rgba(43,36,32,.5);
+            display:flex; align-items:center; justify-content:center;
+            z-index:1500;
+            opacity:0;
+            transform:translateY(-70px);
+            pointer-events:none;
+            will-change:transform, opacity;
+        }
+        .ptr-spin{
+            width:20px; height:20px;
+            border:2.5px solid rgba(45,42,74,.25);
+            border-top-color:var(--terracotta);
+            border-radius:50%;
+        }
+        .ptr.ready .ptr-spin{ border-top-color:var(--cypress); }
+        .ptr.spin{ transition:opacity .2s ease; }
+        .ptr.spin .ptr-spin{ animation:ptrspin .7s linear infinite; }
+        @keyframes ptrspin{ to{ transform:rotate(360deg); } }
+
+        .extras-item{
+            position:relative;
+            display:flex;
+            flex-direction:row;
+            align-items:stretch;
+            gap:.6rem;
+            padding:.95rem 1.05rem;
+            background:var(--paper);
+            border:1px solid rgba(201,183,143,0.55);
+            border-radius:14px;
+            box-shadow:0 1px 2px rgba(43,36,32,.05),
+                       inset 0 1px 0 rgba(255,255,255,0.45);
+            transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+            animation:itemIn .28s ease both;
+        }
+        @media (hover:hover){
+            .extras-item:hover{
+                transform:translateY(-2px);
+                box-shadow:0 14px 30px -16px rgba(43,36,32,.45),
+                           inset 0 1px 0 rgba(255,255,255,0.45);
+                border-color:var(--terracotta);
+            }
+            .extras-item.editing:hover{ transform:none; }
+        }
+        @keyframes itemIn{
+            from{ opacity:0; transform:translateY(6px); }
+            to{ opacity:1; transform:translateY(0); }
+        }
+        .extras-header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:.75rem;
+        }
+        .extras-name{
+            flex:1;
+            min-width:0;
+            font-family:'Space Grotesk', 'Rubik', sans-serif;
+            font-size:1.1rem;
+            font-weight:600;
+            letter-spacing:-.01em;
+            color:var(--blue-deep);
+            line-height:1.35;
+            text-align:start;
+            unicode-bidi:plaintext;      /* auto-detect direction per item */
+            display:flex;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:.5rem;
+        }
+        .extras-actions{
+            display:flex;
+            align-items:center;
+            gap:.4rem;
+            flex-shrink:0;
+        }
+        .extras-desc{
+            font-family:'Space Grotesk', 'Rubik', sans-serif;
+            color:var(--ink);
+            line-height:1.65;
+            font-size:.92rem;
+            /* Stay RTL-aligned like the rest of the layout: a Latin-only note
+               (e.g. "Chaweng night market") reads left-to-right internally but
+               still hugs the right edge instead of flipping to the left. */
+            direction:rtl;
+            text-align:right;
+            opacity:.9;
+        }
+        /* drag handle */
+        /* wishlist "got it" checkbox (sits on the right in RTL) */
+        .item-check{
+            flex-shrink:0;
+            align-self:center;
+            width:20px;
+            height:20px;
+            margin:0;
+            cursor:pointer;
+            accent-color:var(--cypress);
+        }
+        /* checked → strike through the whole card */
+        .extras-item.done{ opacity:.6; }
+        .extras-item.done .extras-name,
+        .extras-item.done .extras-desc{
+            text-decoration:line-through;
+            text-decoration-color:var(--terracotta);
+            text-decoration-thickness:2px;
+        }
+        .extras-body{ flex:1; min-width:0; display:flex; flex-direction:column; gap:.5rem; }
+        /* edit button */
+        .item-edit{
+            width:28px;
+            height:28px;
+            flex-shrink:0;
+            border-radius:10px;
+            border:1px solid transparent;
+            background:transparent;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            font-size:.8rem;
+            line-height:1;
+            opacity:.45;
+            filter:grayscale(1);
+            transition:all .18s ease;
+        }
+        @media (hover:hover){
+            .item-edit:hover{
+                opacity:1;
+                filter:none;
+                background:rgba(45,42,74,.1);
+                border-color:var(--blue);
+                transform:scale(1.05);
+            }
+        }
+        /* inline edit form (reuses add-form fields) */
+        .edit-form{
+            display:flex;
+            flex-wrap:wrap;
+            gap:.6rem;
+            align-items:center;
+            width:100%;
+        }
+        .edit-form .add-input{ font-size:.88rem; }
+        .edit-actions{ display:flex; gap:.4rem; flex-shrink:0; }
+        .edit-save, .edit-cancel{
+            flex-shrink:0;
+            width:34px; height:34px;
+            display:flex; align-items:center; justify-content:center;
+            border-radius:10px;
+            border:1px solid var(--line);
+            cursor:pointer;
+            font-size:1rem;
+            transition:all .18s ease;
+        }
+        .edit-save{ background:#4c8c4a; border-color:#4c8c4a; color:#fff; }
+        .edit-cancel{ background:var(--paper); color:var(--blue-deep); }
+        @media (hover:hover){
+            .edit-save:hover{ filter:brightness(1.1); }
+            .edit-cancel:hover{ background:var(--paper-deep); }
+        }
+        .extras-summary{
+            margin:0 0 1.25rem;
+            padding:1rem 1.15rem;
+            background:linear-gradient(135deg, var(--blue), var(--blue-deep));
+            border:none;
+            border-radius:16px;
+            box-shadow:0 18px 36px -20px rgba(28,26,48,.8),
+                       inset 0 1px 0 rgba(255,255,255,0.08);
+            font-family:'Fraunces', serif;
+            font-weight:600;
+            color:var(--paper);
+            line-height:1.6;
+            text-align:start;
+        }
+        .extras-summary .total{
+            display:block;
+            margin-top:.15rem;
+            color:var(--lemon);
+            font-family:'Rubik', sans-serif;
+            font-size:1.05rem;
+            font-weight:700;
+        }
+        .extras-summary .total span{ font-variant-numeric:tabular-nums; }
+        .extras-price{
+            display:inline-flex;
+            align-items:baseline;
+            gap:.15rem;
+            padding:.28rem .7rem;
+            background:linear-gradient(135deg, var(--terracotta), var(--terracotta-deep));
+            color:var(--paper);
+            border-radius:999px;
+            box-shadow:0 2px 8px -3px rgba(125,18,38,.6);
+            font-family:'Rubik', sans-serif;
+            font-size:.82rem;
+            font-weight:700;
+            direction:ltr;
+            white-space:nowrap;
+            font-variant-numeric:tabular-nums;
+        }
+        .extras-city{
+            display:inline-flex;
+            align-items:center;
+            gap:.35rem;
+            padding:.18rem .65rem;
+            background:var(--paper-deep);
+            color:var(--blue-deep);
+            border:1px solid var(--line);
+            border-radius:999px;
+            font-family:'Rubik', sans-serif;
+            font-size:.72rem;
+            font-weight:600;
+        }
+        .extras-city::before{
+            content:"";
+            width:.4rem;
+            height:.4rem;
+            border-radius:50%;
+            background:var(--terracotta);
+        }
+        /* ---------- ADD FORM ---------- */
+        .add-form{
+            display:flex;
+            flex-wrap:wrap;
+            gap:.6rem;
+            align-items:center;
+            margin-top:1.35rem;
+            padding-top:1.35rem;
+            border-top:1px solid var(--line);
+        }
+        .add-input{
+            flex:1;
+            min-width:8rem;
+            padding:.6rem .9rem;
+            border:1px solid var(--line);
+            border-radius:10px;
+            background:var(--paper);
+            color:var(--blue-deep);
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            text-align:start;
+            transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+        .add-input.price{ flex:0 0 6.5rem; min-width:0; text-align:center; direction:ltr; }
+        .add-select{ flex:0 0 8.5rem; min-width:0; cursor:pointer; }
+        .add-select:invalid{ color:var(--blue); opacity:.6; }
+        .add-input::placeholder{ color:var(--blue); opacity:.45; }
+        .add-input:focus{
+            outline:none;
+            border-color:var(--terracotta);
+            background:#fff;
+            box-shadow:0 0 0 3px rgba(165,25,49,.14);
+        }
+        .add-btn{
+            flex-shrink:0;
+            display:inline-flex;
+            align-items:center;
+            gap:.4rem;
+            padding:.6rem 1.25rem;
+            border:none;
+            border-radius:10px;
+            background:linear-gradient(135deg, var(--terracotta), var(--terracotta-deep));
+            color:var(--paper);
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            font-weight:700;
+            cursor:pointer;
+            box-shadow:0 4px 14px -6px rgba(125,18,38,.7);
+            transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+        }
+        @media (hover:hover){
+            .add-btn:hover{ transform:translateY(-1px); filter:brightness(1.07); box-shadow:0 7px 18px -6px rgba(125,18,38,.75); }
+        }
+        .add-btn:active{ transform:translateY(0); }
+        .add-btn:disabled{ opacity:.55; cursor:default; transform:none; box-shadow:none; }
+        /* ghost delete button — reveals red intent on hover */
+        /* small "remove" badge floating on the card's top-left corner */
+        .item-del{
+            position:absolute;
+            top:-7px;
+            left:-7px;
+            width:20px;
+            height:20px;
+            padding:0;
+            border-radius:50%;
+            border:1.5px solid var(--paper);
+            background:var(--terracotta);
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            cursor:pointer;
+            font-size:.72rem;
+            font-weight:700;
+            line-height:1;
+            box-shadow:0 2px 5px -1px rgba(0,0,0,.4);
+            z-index:4;
+            transition:transform .15s ease, background .15s ease;
+        }
+        @media (hover:hover){
+            .item-del:hover{
+                background:var(--terracotta-deep);
+                transform:scale(1.15);
+            }
+        }
+        .empty-hint{
+            display:flex;
+            align-items:center;
+            gap:.6rem;
+            color:var(--blue);
+            opacity:.7;
+            font-style:italic;
+            padding:1.5rem 1rem;
+            justify-content:center;
+            text-align:center;
+            border:1.5px dashed var(--line);
+            border-radius:14px;
+            background:rgba(201,183,143,.08);
+        }
+        .extras-links{
+            display:flex;
+            flex-wrap:wrap;
+            gap:.5rem;
+            margin-top:.5rem;
+        }
+        .extras-link{
+            display:inline-flex;
+            align-items:center;
+            gap:.35rem;
+            padding:.3rem .7rem;
+            border:1px solid var(--line);
+            border-radius:6px;
+            background:var(--paper);
+            color:var(--blue-deep);
+            text-decoration:none;
+            font-size:.85rem;
+            transition:all .2s ease;
+        }
+        .extras-link:hover{ background:var(--lemon); border-color:var(--lemon); }
+        .extras-link svg{ width:16px; height:16px; }
+
+        /* ---------- SHARED NOTES ---------- */
+        .notes-section{
+            max-width:800px;
+            margin:2rem auto;
+            padding:0 1.5rem;
+        }
+        .notes-container{
+            background:var(--paper-deep);
+            border:1px solid var(--line);
+            border-radius:8px;
+            padding:1.5rem;
+        }
+        .notes-form{
+            display:flex;
+            gap:.5rem;
+            margin-bottom:1rem;
+            flex-wrap:wrap;
+        }
+        .notes-form input{
+            padding:.5rem .8rem;
+            border:1px solid var(--line);
+            border-radius:6px;
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            background:var(--paper);
+        }
+        .notes-form input[name="author"]{
+            width:100px;
+        }
+        .notes-form input[name="message"]{
+            flex:1;
+            min-width:200px;
+        }
+        .notes-form button{
+            padding:.5rem 1rem;
+            background:var(--terracotta);
+            color:var(--paper);
+            border:none;
+            border-radius:6px;
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            cursor:pointer;
+            transition:background .2s ease;
+        }
+        .notes-form button:hover{
+            background:var(--terracotta-deep);
+        }
+        .notes-list{
+            display:flex;
+            flex-direction:column;
+            gap:.8rem;
+        }
+        .note-item{
+            background:var(--lemon);
+            padding:.8rem 1rem;
+            border-radius:6px;
+            box-shadow:2px 2px 8px rgba(0,0,0,0.1);
+            transform:rotate(-0.5deg);
+        }
+        .note-item:nth-child(even){
+            transform:rotate(0.5deg);
+        }
+        .note-author{
+            font-weight:700;
+            color:var(--blue-deep);
+            font-size:.85rem;
+        }
+        .note-message{
+            margin-top:.3rem;
+            color:var(--ink);
+        }
+        .note-time{
+            font-size:.75rem;
+            color:var(--blue);
+            margin-top:.3rem;
+        }
+        .notes-loading{
+            text-align:center;
+            color:var(--blue);
+            font-style:italic;
+        }
+        .note-delete{
+            float:left;
+            background:none;
+            border:none;
+            color:var(--terracotta);
+            cursor:pointer;
+            font-size:.85rem;
+            padding:0;
+            opacity:0.7;
+        }
+        .note-delete:hover{
+            opacity:1;
+        }
+
+        /* ---------- DOCS ---------- */
+        .doc-item{
+            background:var(--paper-deep);
+            border:1px solid var(--line);
+            border-radius:8px;
+            padding:1.2rem 1.5rem;
+            margin-bottom:1rem;
+        }
+        .doc-header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:1rem;
+        }
+        .doc-title{
+            font-family:'Frank Ruhl Libre', serif;
+            font-weight:700;
+            font-size:1.15rem;
+            color:var(--blue-deep);
+        }
+        .doc-toggle{
+            padding:.5rem 1.2rem;
+            background:var(--terracotta);
+            color:var(--paper);
+            border:none;
+            border-radius:6px;
+            font-family:'Rubik', sans-serif;
+            font-size:.9rem;
+            font-weight:600;
+            cursor:pointer;
+            transition:background .2s ease;
+            flex-shrink:0;
+        }
+        .doc-toggle:hover{
+            background:var(--terracotta-deep);
+        }
+        .doc-body{
+            max-height:0;
+            overflow:hidden;
+            opacity:0;
+            transition:max-height .35s ease, opacity .25s ease, margin-top .35s ease;
+        }
+        .doc-item.open .doc-body,
+        .doc-body-static{
+            max-height:2000px;
+            opacity:1;
+            margin-top:1.2rem;
+        }
+        .doc-body img{
+            max-width:100%;
+            border-radius:6px;
+            border:1px solid var(--line);
+            display:block;
+        }
+
+        /* ---------- BUDGET ---------- */
+        .budget-section{
+            max-width:640px;
+            margin:0 auto;
+            padding:1rem 1.2rem 3rem;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        .budget-ring-wrap{
+            position:relative;
+            width:250px;
+            height:250px;
+            margin:1rem 0 1.6rem;
+        }
+        .budget-ring{
+            width:100%;
+            height:100%;
+            transform:rotate(-90deg);
+        }
+        .budget-ring .ring-track{
+            fill:none;
+            stroke:var(--paper-deep);
+            stroke-width:16;
+        }
+        .budget-ring .ring-fill{
+            fill:none;
+            stroke:var(--terracotta);
+            stroke-width:16;
+            stroke-linecap:round;
+            stroke-dasharray:540.35;
+            stroke-dashoffset:0;
+            transition:stroke-dashoffset .6s ease, stroke .3s ease;
+        }
+        .budget-center{
+            position:absolute;
+            inset:0;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            pointer-events:none;
+        }
+        .budget-remaining{
+            font-family:'Fraunces', serif;
+            font-weight:700;
+            font-size:2.5rem;
+            line-height:1;
+            color:var(--blue-deep);
+            direction:ltr;
+        }
+        .budget-caption{
+            margin-top:.4rem;
+            font-size:.85rem;
+            color:var(--ink);
+            opacity:.75;
+        }
+        .budget-spent{
+            margin-top:.5rem;
+            font-size:.9rem;
+            font-weight:600;
+            color:var(--terracotta-deep);
+            direction:rtl;
+        }
+        .budget-add-btn{
+            padding:.7rem 1.6rem;
+            background:var(--terracotta);
+            color:var(--paper);
+            border:none;
+            border-radius:8px;
+            font-family:'Rubik', sans-serif;
+            font-size:1rem;
+            font-weight:600;
+            cursor:pointer;
+            transition:background .2s ease;
+        }
+        .budget-add-btn:hover{ background:var(--terracotta-deep); }
+        .expense-list{
+            list-style:none;
+            margin:1.8rem 0 0;
+            padding:0;
+            width:100%;
+        }
+        .expense-item{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:1rem;
+            padding:.8rem 1rem;
+            background:var(--paper-deep);
+            border:1px solid var(--line);
+            border-radius:8px;
+            margin-bottom:.6rem;
+        }
+        .expense-item .exp-desc{
+            font-weight:600;
+            color:var(--blue-deep);
+            flex:1;
+            word-break:break-word;
+        }
+        .expense-item .exp-amount{
+            font-family:'Fraunces', serif;
+            font-weight:700;
+            color:var(--terracotta-deep);
+            direction:ltr;
+            white-space:nowrap;
+        }
+        .expense-item .exp-del{
+            background:none;
+            border:none;
+            color:var(--ink);
+            opacity:.5;
+            cursor:pointer;
+            font-size:1.2rem;
+            line-height:1;
+            padding:.2rem .4rem;
+            transition:opacity .2s ease, color .2s ease;
+        }
+        .expense-item .exp-del:hover{ opacity:1; color:var(--terracotta); }
+        .expense-empty{
+            margin-top:1.6rem;
+            color:var(--ink);
+            opacity:.6;
+            text-align:center;
+        }
+        .budget-modal-overlay{
+            position:fixed;
+            inset:0;
+            background:rgba(43,36,32,.55);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:1.2rem;
+            z-index:1000;
+        }
+        .budget-modal-overlay[hidden]{ display:none; }
+        .budget-modal{
+            background:var(--paper);
+            border:1px solid var(--line);
+            border-radius:12px;
+            padding:1.6rem;
+            width:100%;
+            max-width:360px;
+            box-shadow:0 20px 40px -12px rgba(0,0,0,.4);
+        }
+        .budget-modal-title{
+            font-family:'Frank Ruhl Libre', serif;
+            font-weight:700;
+            font-size:1.3rem;
+            color:var(--blue-deep);
+            margin:0 0 1.2rem;
+        }
+        .budget-field{
+            display:flex;
+            flex-direction:column;
+            gap:.35rem;
+            margin-bottom:1rem;
+        }
+        .budget-field span{
+            font-size:.9rem;
+            font-weight:600;
+            color:var(--ink);
+        }
+        .budget-field input{
+            padding:.6rem .8rem;
+            border:1px solid var(--line);
+            border-radius:6px;
+            background:var(--paper-deep);
+            font-family:'Rubik', sans-serif;
+            font-size:1rem;
+            color:var(--ink);
+        }
+        .budget-field input:focus{
+            outline:none;
+            border-color:var(--terracotta);
+        }
+        .budget-error{
+            color:var(--terracotta-deep);
+            font-size:.85rem;
+            margin:0 0 .8rem;
+        }
+        .budget-modal-actions{
+            display:flex;
+            gap:.7rem;
+            justify-content:flex-end;
+        }
+        .budget-cancel, .budget-save{
+            padding:.6rem 1.3rem;
+            border-radius:6px;
+            font-family:'Rubik', sans-serif;
+            font-size:.95rem;
+            font-weight:600;
+            cursor:pointer;
+            border:1px solid var(--line);
+        }
+        .budget-cancel{
+            background:var(--paper-deep);
+            color:var(--ink);
+        }
+        .budget-save{
+            background:var(--terracotta);
+            color:var(--paper);
+            border-color:var(--terracotta);
+        }
+        .budget-save:hover{ background:var(--terracotta-deep); }
+
+        @media (max-width:720px){
+            .day-inner{ padding:1.6rem 1.3rem 1.8rem; margin-inline-start:2.6rem; }
+            .journal{ padding:3rem .9rem 5rem; }
+            .day-place{ font-size:1.4rem; }
+        }
+
+        @media (max-width:560px){
+            .hero{ padding:3rem .6rem 2.6rem; }
+            .hero-cal{ padding:1.4rem .6rem 1.6rem; }
+            .cal-grid{ gap:.22rem; }
+            .cal-dow{ font-size:.72rem; padding:.15rem 0 .3rem; }
+            .cal-cell{ min-height:56px; padding:.28rem .22rem; border-radius:4px; gap:.15rem; }
+            .cal-date{ font-size:.62rem; }
+            .cal-place{ font-size:.6rem; line-height:1.2; }
+            /* shrink the travel/ferry badge and its text clearance */
+            .cal-cell.travel::after,
+            .cal-cell.ferry::after{ width:.95rem; height:.95rem; top:.22rem; left:.22rem; font-size:.58rem; }
+            .cal-cell.travel .cal-date,
+            .cal-cell.ferry .cal-date{ padding-inline-start:1.1rem; }
+        }
+        @media (max-width:380px){
+            .cal-grid{ gap:.16rem; }
+            .cal-dow{ font-size:.64rem; }
+            .cal-cell{ min-height:52px; padding:.22rem .16rem; }
+            .cal-date{ font-size:.56rem; }
+            .cal-place{ font-size:.54rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-cal">
+        <h2 class="hero-cal-title">London 2026</h2>
+        <div class="cal-scroll">
+            <div class="cal-grid">
+                <div class="cal-dow">ראשון</div>
+                <div class="cal-dow">שני</div>
+                <div class="cal-dow">שלישי</div>
+                <div class="cal-dow">רביעי</div>
+                <div class="cal-dow">חמישי</div>
+                <div class="cal-dow">שישי</div>
+                <div class="cal-dow">שבת</div>
+
+                <!-- Week 1 (Sun 6 – Sat 12 Sep) -->
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell travel"><span class="cal-date lat">10/9</span><span class="cal-place">טיסה לונדון, נחיתה בהיתרו אחה״צ</span></div>
+                <div class="cal-cell r-central"><span class="cal-date lat">11/9</span><span class="cal-place">סנטרל · וסטמינסטר ובאקינגהאם</span></div>
+                <div class="cal-cell r-camden"><span class="cal-date lat">12/9</span><span class="cal-place">קמדן · שוק ותעלת ריג׳נטס</span></div>
+
+                <!-- Week 2 (Sun 13 – Sat 19 Sep) -->
+                <div class="cal-cell r-nottinghill"><span class="cal-date lat">13/9</span><span class="cal-place">נוטינג היל · שוק פורטובלו</span></div>
+                <div class="cal-cell r-soho"><span class="cal-date lat">14/9</span><span class="cal-place">סוהו · קובנט גארדן ומחזמר בווסט אנד</span></div>
+                <div class="cal-cell r-shoreditch"><span class="cal-date lat">15/9</span><span class="cal-place">שורדיץ׳ · מזרח לונדון וסטריט ארט</span></div>
+                <div class="cal-cell r-greenwich"><span class="cal-date lat">16/9</span><span class="cal-place">גריניץ׳ · קו התאריך והשוק</span></div>
+                <div class="cal-cell r-central"><span class="cal-date lat">17/9</span><span class="cal-place">סאות׳ קנזינגטון · מוזיאונים</span></div>
+                <div class="cal-cell r-daytrip"><span class="cal-date lat">18/9</span><span class="cal-place">טיול יום · וינדזור / אוקספורד</span></div>
+                <div class="cal-cell r-central"><span class="cal-date lat">19/9</span><span class="cal-place">קניות · אוקספורד סטריט והארודס</span></div>
+
+                <!-- Week 3 (Sun 20 Sep) -->
+                <div class="cal-cell travel"><span class="cal-date lat">20/9</span><span class="cal-place">טיסה חזרה לישראל</span></div>
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell empty"></div>
+                <div class="cal-cell empty"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- TOP NAVIGATION -->
+<nav class="top-nav">
+    <button class="top-nav-tab active" data-panel="route">🗺️ מסלול</button>
+    <button class="top-nav-tab" data-panel="food">🍽️ אוכל</button>
+    <button class="top-nav-tab" data-panel="places">📍 אתרים</button>
+    <button class="top-nav-tab" data-panel="shopping">🛍️ קניות</button>
+    <button class="top-nav-tab" data-panel="hotels">🏨 מלונות</button>
+    <button class="top-nav-tab" data-panel="flights">✈️ טיסות</button>
+    <button class="top-nav-tab" data-panel="wishlist">⭐ wishlist</button>
+    <button class="top-nav-tab" data-panel="currency">💱 המרה</button>
+</nav>
+
+
+<!-- ROUTE / ITINERARY PANEL -->
+<div class="main-panel active" data-panel="route">
+    <section class="extras-section">
+        <div class="sub-tabs">
+            <button class="sub-tab active" data-city="route-west">מרכז ומערב</button>
+            <button class="sub-tab" data-city="route-east">מזרח וצפון</button>
+            <button class="sub-tab" data-city="route-daytrips">טיולי יום</button>
+        </div>
+
+        <!-- WEST & CENTRAL LONDON ITINERARY -->
+        <div class="sub-content active" data-city="route-west">
+            <div class="plan-info">
+                <div class="plan-day">11.9 <small>שישי · וסטמינסטר</small></div>
+                <ul>
+                    <li>בוקר ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Westminster+Abbey+London" target="_blank" rel="noopener">Westminster Abbey</a> ומשם ל־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Big+Ben+London" target="_blank" rel="noopener">Big Ben</a> וגשר וסטמינסטר</li>
+                    <li>חילופי המשמר ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Buckingham+Palace+London" target="_blank" rel="noopener">Buckingham Palace</a> (בדרך כלל ב־11:00)</li>
+                    <li>טיול רגלי דרך <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=St+James+Park+London" target="_blank" rel="noopener">St James's Park</a> ל־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Trafalgar+Square+London" target="_blank" rel="noopener">Trafalgar Square</a></li>
+                    <li><span class="pi-note">אפשר להיכנס בחינם ל־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=National+Gallery+London" target="_blank" rel="noopener">National Gallery</a> שנמצאת ממש על הכיכר.</span></li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">13.9 <small>ראשון · נוטינג היל</small></div>
+                <ul>
+                    <li><strong>שוק פורטובלו</strong> — <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Portobello+Road+Market+London" target="_blank" rel="noopener">Portobello Road Market</a>, הכי שוקק בשבת אבל פעיל גם בראשון</li>
+                    <li>הרחובות הצבעוניים של <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Notting+Hill+London" target="_blank" rel="noopener">Notting Hill</a> ו־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Lancaster+Road+Notting+Hill+London" target="_blank" rel="noopener">Lancaster Road</a></li>
+                    <li>קפה ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Farm+Girl+Notting+Hill+London" target="_blank" rel="noopener">Farm Girl</a></li>
+                    <li>אחה״צ טיול ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Hyde+Park+London" target="_blank" rel="noopener">Hyde Park</a> וקנסינגטון גארדנס</li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">14.9 <small>שני · סוהו וקובנט גארדן</small></div>
+                <ul>
+                    <li>סיבוב ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Covent+Garden+London" target="_blank" rel="noopener">Covent Garden</a> — כיכר האמנים, חנויות וברחוב יש הופעות רחוב</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Neal's+Yard+London" target="_blank" rel="noopener">Neal's Yard</a> — חצר צבעונית קטנה ומצולמת</li>
+                    <li>שיטוט ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Soho+London" target="_blank" rel="noopener">Soho</a> ו־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Carnaby+Street+London" target="_blank" rel="noopener">Carnaby Street</a></li>
+                    <li><span class="pi-note">בערב מחזמר בווסט אנד ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=West+End+Theatre+London" target="_blank" rel="noopener">West End</a> — כדאי להזמין כרטיסים מראש.</span></li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">17.9 <small>חמישי · סאות׳ קנזינגטון</small></div>
+                <ul>
+                    <li>בוקר ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Natural+History+Museum+London" target="_blank" rel="noopener">Natural History Museum</a> (כניסה חינם)</li>
+                    <li>ממול — <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Victoria+and+Albert+Museum+London" target="_blank" rel="noopener">V&A Museum</a> ו־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Science+Museum+London" target="_blank" rel="noopener">Science Museum</a></li>
+                    <li>אחה״צ קפה בשכונת <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=South+Kensington+London" target="_blank" rel="noopener">South Kensington</a></li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">19.9 <small>שבת · קניות</small></div>
+                <ul>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Oxford+Street+London" target="_blank" rel="noopener">Oxford Street</a> ו־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Regent+Street+London" target="_blank" rel="noopener">Regent Street</a></li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Liberty+London" target="_blank" rel="noopener">Liberty London</a> — כלבו היסטורי בבניין טיודור</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Harrods+London" target="_blank" rel="noopener">Harrods</a> בנייטסברידג׳</li>
+                    <li>ערב אחרון: תצפית ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=London+Eye" target="_blank" rel="noopener">London Eye</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EAST & NORTH LONDON ITINERARY -->
+        <div class="sub-content" data-city="route-east">
+            <div class="plan-info">
+                <div class="plan-day">12.9 <small>שבת · קמדן</small></div>
+                <ul>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Camden+Market+London" target="_blank" rel="noopener">Camden Market</a> — דוכני אוכל, וינטג׳ ומוזיקה</li>
+                    <li>שיט או הליכה על <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Regent's+Canal+Camden+London" target="_blank" rel="noopener">Regent's Canal</a> אל <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Little+Venice+London" target="_blank" rel="noopener">Little Venice</a></li>
+                    <li><span class="pi-note">אפשר להמשיך ל־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Primrose+Hill+London" target="_blank" rel="noopener">Primrose Hill</a> לתצפית יפה על קו הרקיע של לונדון.</span></li>
+                    <li>ואם נשאר כוח — <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Regent's+Park+London" target="_blank" rel="noopener">Regent's Park</a></li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">15.9 <small>שני · שורדיץ׳</small></div>
+                <ul>
+                    <li>סטריט ארט ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Brick+Lane+London" target="_blank" rel="noopener">Brick Lane</a> ובסמטאות שורדיץ׳</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Old+Spitalfields+Market+London" target="_blank" rel="noopener">Old Spitalfields Market</a> — עיצוב, וינטג׳ ואוכל</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Columbia+Road+Flower+Market+London" target="_blank" rel="noopener">Columbia Road</a> (שוק הפרחים — בעיקר בראשון)</li>
+                    <li>בייגל אגדי ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Beigel+Bake+Brick+Lane+London" target="_blank" rel="noopener">Beigel Bake</a></li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">16.9 <small>שלישי · גריניץ׳</small></div>
+                <ul>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Royal+Observatory+Greenwich+London" target="_blank" rel="noopener">Royal Observatory</a> — לעמוד על קו התאריך (Prime Meridian)</li>
+                    <li>תצפית מ־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Greenwich+Park+London" target="_blank" rel="noopener">Greenwich Park</a> על קנרי וורף</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Greenwich+Market+London" target="_blank" rel="noopener">Greenwich Market</a> וספינת <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Cutty+Sark+Greenwich+London" target="_blank" rel="noopener">Cutty Sark</a></li>
+                    <li><span class="pi-note">כיף להגיע/לחזור ב־Uber Boat על התמזה מהמרכז.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DAY TRIPS ITINERARY -->
+        <div class="sub-content" data-city="route-daytrips">
+            <div class="plan-info">
+                <div class="plan-day">18.9 <small>שישי · וינדזור</small></div>
+                <ul>
+                    <li>רכבת מ־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=London+Paddington+Station" target="_blank" rel="noopener">Paddington</a> ל־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Windsor+and+Eton+Central+station" target="_blank" rel="noopener">Windsor</a> (כ־40 דק׳)</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Windsor+Castle" target="_blank" rel="noopener">Windsor Castle</a> — הטירה המאוישת הוותיקה בעולם</li>
+                    <li>שיטוט ב־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Windsor+town+centre" target="_blank" rel="noopener">מרכז העיירה</a> ולאורך התמזה</li>
+                    <li><span class="pi-note">לחובבי חוויות: <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Legoland+Windsor" target="_blank" rel="noopener">Legoland</a> נמצא ממש ליד.</span></li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">חלופה <small>אוקספורד</small></div>
+                <ul>
+                    <li>רכבת מ־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=London+Paddington+Station" target="_blank" rel="noopener">Paddington</a> ל־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Oxford+railway+station" target="_blank" rel="noopener">Oxford</a> (כשעה)</li>
+                    <li>סיור באוניברסיטה: <a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Bodleian+Library+Oxford" target="_blank" rel="noopener">Bodleian Library</a> ו־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Christ+Church+College+Oxford" target="_blank" rel="noopener">Christ Church</a></li>
+                    <li>תצפית מ־<a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Carfax+Tower+Oxford" target="_blank" rel="noopener">Carfax Tower</a></li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Covered+Market+Oxford" target="_blank" rel="noopener">Covered Market</a> לאוכל וקניות</li>
+                </ul>
+            </div>
+            <div class="plan-info">
+                <div class="plan-day">רעיונות נוספים <small>לטיולי יום</small></div>
+                <ul>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Warner+Bros+Studio+Tour+London+Harry+Potter" target="_blank" rel="noopener">Harry Potter Studio Tour</a> (Watford)</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Bath+England" target="_blank" rel="noopener">Bath</a> — עיר האמבטיות הרומיות</li>
+                    <li><a class="maplink lat" href="https://www.google.com/maps/search/?api=1&query=Cambridge+England" target="_blank" rel="noopener">Cambridge</a> — שייט פאנטינג על הנהר</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div><!-- END ROUTE PANEL -->
+
+<!-- FOOD PANEL -->
+<div class="main-panel" data-panel="food">
+    <section class="extras-section">
+        <div class="sub-tabs">
+            <button class="sub-tab active" data-city="food-central">סנטרל</button>
+            <button class="sub-tab" data-city="food-soho">סוהו</button>
+            <button class="sub-tab" data-city="food-camden">קמדן</button>
+            <button class="sub-tab" data-city="food-nottinghill">נוטינג היל</button>
+            <button class="sub-tab" data-city="food-shoreditch">שורדיץ׳</button>
+            <button class="sub-tab" data-city="food-greenwich">גריניץ׳</button>
+        </div>
+
+        <div class="sub-content active" data-city="food-central">
+            <div class="item-list" data-list-key="food-central"></div>
+            <div class="add-form" data-list-target="food-central" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם המקום">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="food-soho">
+            <div class="item-list" data-list-key="food-soho"></div>
+            <div class="add-form" data-list-target="food-soho" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם המקום">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="food-camden">
+            <div class="item-list" data-list-key="food-camden"></div>
+            <div class="add-form" data-list-target="food-camden" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם המקום">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="food-nottinghill">
+            <div class="item-list" data-list-key="food-nottinghill"></div>
+            <div class="add-form" data-list-target="food-nottinghill" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם המקום">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="food-shoreditch">
+            <div class="item-list" data-list-key="food-shoreditch"></div>
+            <div class="add-form" data-list-target="food-shoreditch" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם המקום">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="food-greenwich">
+            <div class="item-list" data-list-key="food-greenwich"></div>
+            <div class="add-form" data-list-target="food-greenwich" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם המקום">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+    </section>
+</div><!-- END FOOD PANEL -->
+
+<!-- PLACES PANEL -->
+<div class="main-panel" data-panel="places">
+    <section class="extras-section">
+        <div class="sub-tabs">
+            <button class="sub-tab active" data-city="places-central">סנטרל</button>
+            <button class="sub-tab" data-city="places-soho">סוהו</button>
+            <button class="sub-tab" data-city="places-camden">קמדן</button>
+            <button class="sub-tab" data-city="places-nottinghill">נוטינג היל</button>
+            <button class="sub-tab" data-city="places-shoreditch">שורדיץ׳</button>
+            <button class="sub-tab" data-city="places-greenwich">גריניץ׳</button>
+        </div>
+
+        <div class="sub-content active" data-city="places-central">
+            <div class="item-list" data-list-key="places-central"></div>
+            <div class="add-form" data-list-target="places-central" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="places-soho">
+            <div class="item-list" data-list-key="places-soho"></div>
+            <div class="add-form" data-list-target="places-soho" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="places-camden">
+            <div class="item-list" data-list-key="places-camden"></div>
+            <div class="add-form" data-list-target="places-camden" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="places-nottinghill">
+            <div class="item-list" data-list-key="places-nottinghill"></div>
+            <div class="add-form" data-list-target="places-nottinghill" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="places-shoreditch">
+            <div class="item-list" data-list-key="places-shoreditch"></div>
+            <div class="add-form" data-list-target="places-shoreditch" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="places-greenwich">
+            <div class="item-list" data-list-key="places-greenwich"></div>
+            <div class="add-form" data-list-target="places-greenwich" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+    </section>
+</div><!-- END PLACES PANEL -->
+
+<!-- SHOPPING PANEL -->
+<div class="main-panel" data-panel="shopping">
+    <section class="extras-section">
+        <div class="sub-tabs">
+            <button class="sub-tab active" data-city="shopping-central">סנטרל</button>
+            <button class="sub-tab" data-city="shopping-soho">סוהו</button>
+            <button class="sub-tab" data-city="shopping-camden">קמדן</button>
+            <button class="sub-tab" data-city="shopping-nottinghill">נוטינג היל</button>
+            <button class="sub-tab" data-city="shopping-shoreditch">שורדיץ׳</button>
+            <button class="sub-tab" data-city="shopping-greenwich">גריניץ׳</button>
+        </div>
+
+        <div class="sub-content active" data-city="shopping-central">
+            <div class="item-list" data-list-key="shopping-central"></div>
+            <div class="add-form" data-list-target="shopping-central" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם מקום הקניות">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="shopping-soho">
+            <div class="item-list" data-list-key="shopping-soho"></div>
+            <div class="add-form" data-list-target="shopping-soho" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם מקום הקניות">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="shopping-camden">
+            <div class="item-list" data-list-key="shopping-camden"></div>
+            <div class="add-form" data-list-target="shopping-camden" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם מקום הקניות">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="shopping-nottinghill">
+            <div class="item-list" data-list-key="shopping-nottinghill"></div>
+            <div class="add-form" data-list-target="shopping-nottinghill" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם מקום הקניות">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="shopping-shoreditch">
+            <div class="item-list" data-list-key="shopping-shoreditch"></div>
+            <div class="add-form" data-list-target="shopping-shoreditch" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם מקום הקניות">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+        <div class="sub-content" data-city="shopping-greenwich">
+            <div class="item-list" data-list-key="shopping-greenwich"></div>
+            <div class="add-form" data-list-target="shopping-greenwich" data-fields="name,note,link,map">
+                <input class="add-input" type="text" data-field="name" placeholder="שם מקום הקניות">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="text" data-field="link" placeholder="קישור (לא חובה)">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+    </section>
+</div><!-- END SHOPPING PANEL -->
+
+<!-- HOTELS PANEL -->
+<div class="main-panel" data-panel="hotels">
+    <section class="extras-section">
+        <div class="sub-content active">
+            <p class="extras-summary"><span class="total">סה״כ מלונות — ₪<span id="hotelsTotal">0</span></span></p>
+            <div class="item-list" data-list-key="hotels"></div>
+            <div class="add-form" data-list-target="hotels" data-fields="name,city,note,map,price">
+                <input class="add-input" type="text" data-field="name" placeholder="שם המלון">
+                <select class="add-input add-select" data-field="city">
+                    <option value="" disabled selected>עיר</option>
+                    <option value="סנטרל">סנטרל</option>
+                    <option value="סוהו">סוהו</option>
+                    <option value="קמדן">קמדן</option>
+                    <option value="נוטינג היל">נוטינג היל</option>
+                    <option value="שורדיץ׳">שורדיץ׳</option>
+                    <option value="גריניץ׳">גריניץ׳</option>
+                    <option value="אחר">אחר</option>
+                </select>
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input" type="url" inputmode="url" data-field="map" placeholder="קישור Google Maps">
+                <input class="add-input price" type="text" inputmode="numeric" data-field="price" placeholder="מחיר">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+    </section>
+</div><!-- END HOTELS PANEL -->
+
+<!-- FLIGHTS PANEL -->
+<div class="main-panel" data-panel="flights">
+    <section class="extras-section">
+        <div class="sub-content active">
+            <p class="extras-summary"><span class="total">סה״כ טיסות — ₪<span id="flightsTotal">0</span></span></p>
+            <div class="item-list" data-list-key="flights"></div>
+            <div class="add-form" data-list-target="flights" data-fields="from,to,note,price">
+                <input class="add-input" type="text" data-field="from" placeholder="מוצא">
+                <input class="add-input" type="text" data-field="to" placeholder="יעד">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <input class="add-input price" type="text" inputmode="numeric" data-field="price" placeholder="מחיר">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+    </section>
+</div><!-- END FLIGHTS PANEL -->
+
+<!-- WISHLIST PANEL -->
+<div class="main-panel" data-panel="wishlist">
+    <section class="extras-section">
+        <div class="sub-content active">
+            <div class="item-list" data-list-key="wishlist"></div>
+            <div class="add-form" data-list-target="wishlist" data-fields="name,note">
+                <input class="add-input" type="text" data-field="name" placeholder="מה רוצים לקנות">
+                <input class="add-input" type="text" data-field="note" placeholder="הערה">
+                <button type="button" class="add-btn">+ הוספה</button>
+            </div>
+        </div>
+    </section>
+</div><!-- END WISHLIST PANEL -->
+
+<!-- CURRENCY PANEL -->
+<div class="main-panel" data-panel="currency">
+    <section class="currency-section">
+        <div class="currency-card">
+            <div class="currency-row">
+                <label>🇮🇱 שקל</label>
+                <input type="text" inputmode="decimal" data-cur="ILS" placeholder="0">
+            </div>
+            <div class="currency-row">
+                <label>🇬🇧 ליש״ט</label>
+                <input type="text" inputmode="decimal" data-cur="GBP" placeholder="0">
+            </div>
+            <div class="currency-row">
+                <label>🇺🇸 דולר</label>
+                <input type="text" inputmode="decimal" data-cur="USD" placeholder="0">
+            </div>
+            <div class="currency-row">
+                <label>🇪🇺 אירו</label>
+                <input type="text" inputmode="decimal" data-cur="EUR" placeholder="0">
+            </div>
+            <p class="currency-note"><span id="currencyStatus">טוען שערים…</span> · הקלידו סכום בכל שדה וההמרה תתעדכן אוטומטית.</p>
+        </div>
+    </section>
+</div><!-- END CURRENCY PANEL -->
+
+
+<script>
+    // Collapsible Days
+    function toggleDay(header) {
+        const day = header.closest('.day');
+        day.classList.toggle('collapsed');
+    }
+
+    // Collapsible Documents
+    function toggleDoc(btn) {
+        const item = btn.closest('.doc-item');
+        const isOpen = item.classList.toggle('open');
+        btn.textContent = isOpen ? 'הסתר' : 'הצג';
+    }
+
+    // Top Navigation Tabs (Schedule / Food / Places)
+    document.querySelectorAll('.top-nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const panel = tab.dataset.panel;
+            document.querySelectorAll('.top-nav-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.main-panel').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            document.querySelector(`.main-panel[data-panel="${panel}"]`).classList.add('active');
+        });
+    });
+
+    // Sub Tabs (Cities within food/places panels)
+    document.querySelectorAll('.sub-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const city = tab.dataset.city;
+            const section = tab.closest('.extras-section');
+            section.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+            section.querySelectorAll('.sub-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            section.querySelector(`.sub-content[data-city="${city}"]`).classList.add('active');
+        });
+    });
+
+    // User-editable lists (food / places / hotels / flights) — shared via JSONbin.io
+    (function() {
+        const JSONBIN_API_KEY = '$2a$10$..XKN1.FgA1/FO3o86hcC.ZbddgA4mmMFep4L7KeJpgdL3HkxHk1u';
+        const BIN_ID = '6a8d3a69da38895dfe0d8a69';   // London bin (separate from the Thailand trip)
+        const LOCAL_KEY = 'london-lists';        // offline mirror of the bin
+        const DIRTY_KEY = 'london-lists-dirty';  // keys edited but not yet synced
+
+        const lists = Array.from(document.querySelectorAll('.item-list'));
+        if (!lists.length) return;
+
+        // In-memory model: { listKey: [ {name, note, price?}, ... ] }
+        let data = {};
+        // Keys the user changed locally that still need to reach the bin.
+        // Persisted to localStorage so a failed/offline save is retried later,
+        // even after the browser or PWA is closed and reopened.
+        let dirty = new Set();
+        let flushing = false;      // a save round is in flight
+
+        // ---- localStorage mirror (survives offline; instant paint on load) ----
+        function cacheLocal() {
+            try {
+                localStorage.setItem(LOCAL_KEY, JSON.stringify(data));
+                localStorage.setItem(DIRTY_KEY, JSON.stringify(Array.from(dirty)));
+            } catch (_) {}
+        }
+        function readCache() {
+            try {
+                const d = JSON.parse(localStorage.getItem(LOCAL_KEY) || 'null');
+                const k = JSON.parse(localStorage.getItem(DIRTY_KEY) || '[]');
+                if (Array.isArray(k)) dirty = new Set(k);
+                return (d && typeof d === 'object') ? d : null;
+            } catch (_) { return null; }
+        }
+
+        const hotelsTotalEl = document.getElementById('hotelsTotal');
+        const flightsTotalEl = document.getElementById('flightsTotal');
+
+        function fmt(n) {
+            return Number(n).toLocaleString('en-US', { maximumFractionDigits: 2 });
+        }
+
+        // Sum numeric price values; supports "901 + 89" style entries
+        function sumList(key) {
+            return (data[key] || []).reduce((total, item) => {
+                const nums = ((item.price || '').match(/\d+(\.\d+)?/g) || []).map(Number);
+                return total + nums.reduce((a, b) => a + b, 0);
+            }, 0);
+        }
+
+        function renderTotals() {
+            if (hotelsTotalEl) hotelsTotalEl.textContent = fmt(sumList('hotels'));
+            if (flightsTotalEl) flightsTotalEl.textContent = fmt(sumList('flights'));
+        }
+
+        function esc(s) {
+            return String(s == null ? '' : s)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        // Styled RTL confirm dialog → resolves true (כן) / false (ביטול).
+        function confirmDialog(message) {
+            return new Promise(resolve => {
+                const overlay = document.createElement('div');
+                overlay.className = 'confirm-overlay';
+                overlay.innerHTML = `
+                    <div class="confirm-box" role="alertdialog" aria-modal="true">
+                        <div class="confirm-msg">${esc(message)}</div>
+                        <div class="confirm-actions">
+                            <button type="button" class="confirm-yes">כן, למחוק</button>
+                            <button type="button" class="confirm-cancel">ביטול</button>
+                        </div>
+                    </div>`;
+                function close(val) {
+                    document.removeEventListener('keydown', onKey);
+                    overlay.remove();
+                    resolve(val);
+                }
+                function onKey(e) {
+                    if (e.key === 'Escape') close(false);
+                    else if (e.key === 'Enter') close(true);
+                }
+                overlay.querySelector('.confirm-yes').addEventListener('click', () => close(true));
+                overlay.querySelector('.confirm-cancel').addEventListener('click', () => close(false));
+                overlay.addEventListener('click', e => { if (e.target === overlay) close(false); });
+                document.addEventListener('keydown', onKey);
+                document.body.appendChild(overlay);
+                overlay.querySelector('.confirm-cancel').focus();
+            });
+        }
+
+        // Lists that get a "done" checkbox + strike-through: the wishlist plus
+        // every food / places / shopping city list. (Hotels & flights are budget
+        // rows, so they keep their plain layout.)
+        const hasCheck = key => key === 'wishlist' || /^(food|places|shopping)-/.test(key);
+
+        // Link glyphs (match the icon-buttons used in the curated lists).
+        const IG_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>';
+        const TIKTOK_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>';
+        const GLOBE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+        // GPS location pin — used for a hotel's Google Maps link (tap to navigate).
+        const MAP_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+
+        // Pick an icon by the link's platform: Instagram, TikTok, or a generic
+        // globe for anything else. Returns { svg, label }.
+        function iconForLink(url) {
+            const u = String(url).toLowerCase();
+            if (u.includes('instagram.com') || u.includes('instagr.am')) return { svg: IG_SVG, label: 'Instagram' };
+            if (u.includes('tiktok.com') || u.includes('snssdk')) return { svg: TIKTOK_SVG, label: 'TikTok' };
+            return { svg: GLOBE_SVG, label: 'קישור' };
+        }
+
+        // Render one list's items into its container
+        function renderList(key) {
+            const container = document.querySelector(`.item-list[data-list-key="${key}"]`);
+            if (!container) return;
+            const items = data[key] || [];
+            if (!items.length) {
+                container.innerHTML = '';
+                return;
+            }
+            container.innerHTML = items.map((item, i) => {
+                const priceHtml = item.price
+                    ? `<span class="extras-price">₪${esc(item.price)}</span>`
+                    : '';
+                const cityHtml = item.city
+                    ? `<span class="extras-city">${esc(item.city)}</span>`
+                    : '';
+                const noteHtml = item.note
+                    ? `<div class="extras-desc">${esc(item.note)}</div>`
+                    : '';
+                // Optional link → icon-button whose glyph matches the platform
+                // (Instagram / TikTok / globe), like the curated lists.
+                const linkIcon = item.link ? iconForLink(item.link) : null;
+                const linkHtml = linkIcon
+                    ? `<a class="icon-btn" href="${esc(item.link)}" target="_blank" rel="noopener" title="${esc(linkIcon.label)}" aria-label="${esc(linkIcon.label)}">${linkIcon.svg}</a>`
+                    : '';
+                // Optional Google-Maps location → GPS-pin icon-button (tap to navigate).
+                const mapHtml = item.map
+                    ? `<a class="icon-btn icon-btn-map" href="${esc(item.map)}" target="_blank" rel="noopener" title="ניווט למלון" aria-label="ניווט למלון">${MAP_SVG}</a>`
+                    : '';
+                // Food / places / shopping / wishlist items get a "done" checkbox
+                // on the right; when checked the card is struck through. The done
+                // state is saved like any other field.
+                const checkHtml = hasCheck(key)
+                    ? `<input type="checkbox" class="item-check" data-list="${key}" data-index="${i}"${item.done ? ' checked' : ''} title="סמן כבוצע" aria-label="סמן כבוצע">`
+                    : '';
+                return `
+                <div class="extras-item${item.done ? ' done' : ''}" data-list="${key}" data-index="${i}">
+                    <button type="button" class="item-del" data-list="${key}" data-index="${i}" title="מחיקה" aria-label="מחיקה">✕</button>
+                    ${checkHtml}
+                    <div class="extras-body">
+                        <div class="extras-header">
+                            <div class="extras-name">${esc(item.name)}${linkHtml}${mapHtml}${cityHtml}</div>
+                            <div class="extras-actions">
+                                ${priceHtml}
+                                <button type="button" class="item-edit" data-list="${key}" data-index="${i}" title="עריכה" aria-label="עריכה">✏️</button>
+                            </div>
+                        </div>
+                        ${noteHtml}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // Build the inline edit form for one item, matching that list's add-form fields
+        function fieldsFor(key) {
+            const form = document.querySelector(`.add-form[data-list-target="${key}"]`);
+            return form ? Array.from(form.querySelectorAll('.add-input')).map(inp => ({
+                field: inp.dataset.field,
+                placeholder: inp.getAttribute('placeholder') || '',
+                isPrice: inp.classList.contains('price'),
+                isSelect: inp.classList.contains('add-select'),
+                options: inp.tagName === 'SELECT'
+                    ? Array.from(inp.options).map(o => ({ v: o.value, t: o.textContent, disabled: o.disabled }))
+                    : null
+            })) : [];
+        }
+
+        function enterEdit(itemEl, key, idx) {
+            const item = (data[key] || [])[idx];
+            if (!item) return;
+            itemEl.classList.add('editing');
+            const body = itemEl.querySelector('.extras-body');
+            const fields = fieldsFor(key);
+            const inputsHtml = fields.map(f => {
+                if (f.isSelect) {
+                    const opts = f.options.map(o =>
+                        `<option value="${esc(o.v)}"${o.disabled ? ' disabled' : ''}${o.v === (item[f.field] || '') ? ' selected' : ''}>${esc(o.t)}</option>`
+                    ).join('');
+                    return `<select class="add-input add-select" data-field="${f.field}">${opts}</select>`;
+                }
+                const cls = f.isPrice ? 'add-input price' : 'add-input';
+                const mode = f.isPrice ? ' inputmode="numeric"' : '';
+                return `<input class="${cls}" type="text"${mode} data-field="${esc(f.field)}" placeholder="${esc(f.placeholder)}" value="${esc(item[f.field] || '')}">`;
+            }).join('');
+            body.innerHTML = `
+                <div class="edit-form">
+                    ${inputsHtml}
+                    <div class="edit-actions">
+                        <button type="button" class="edit-save" title="שמירה" aria-label="שמירה">✔</button>
+                        <button type="button" class="edit-cancel" title="ביטול" aria-label="ביטול">✕</button>
+                    </div>
+                </div>`;
+            const first = body.querySelector('.add-input');
+            if (first) { first.focus(); if (first.select) first.select(); }
+        }
+
+        function renderAll() {
+            lists.forEach(l => renderList(l.dataset.listKey));
+            renderTotals();
+        }
+
+        async function fetchRecord() {
+            const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+                headers: { 'X-Master-Key': JSONBIN_API_KEY },
+                cache: 'no-store'
+            });
+            if (!res.ok) throw new Error('fetch failed');
+            const json = await res.json();
+            return (json.record && typeof json.record === 'object') ? json.record : {};
+        }
+
+        async function putRecord(record) {
+            const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Master-Key': JSONBIN_API_KEY
+                },
+                body: JSON.stringify(record)
+            });
+            if (!res.ok) throw new Error('put failed');
+        }
+
+        // Merge a freshly-fetched server record into our in-memory model:
+        // adopt the server's version for every list EXCEPT ones we currently
+        // have unsynced edits on (those stay as our local copy). Used after both
+        // a load and a save so untouched tabs reflect the server without ever
+        // clobbering an edit made while the request was in flight.
+        function adoptRemote(remote) {
+            Object.keys(remote).forEach(k => { if (!dirty.has(k)) data[k] = remote[k]; });
+            Object.keys(data).forEach(k => {
+                if (!(k in remote) && !dirty.has(k)) delete data[k];
+            });
+        }
+
+        // Save changed lists to the bin without clobbering anything else.
+        // Read-modify-write: pull the latest record, overlay ONLY the lists we
+        // changed locally, then write back. This means edits made on another
+        // device/tab to *other* tabs are never lost, and a failed load can never
+        // wipe the bin (we merge into the live record, not into an empty object).
+        async function flush() {
+            if (flushing || !dirty.size) return;
+            flushing = true;
+            // Take the set we're about to save and clear it NOW. Any edit that
+            // arrives while the request is in flight re-adds its key to `dirty`,
+            // so it survives this round and triggers another flush below. (This
+            // is the fix for "marked two items, only one saved": the second
+            // toggle used to be erased by a blanket dirty.clear().)
+            const sending = Array.from(dirty);
+            sending.forEach(k => dirty.delete(k));
+            try {
+                const remote = await fetchRecord();          // latest server truth
+                sending.forEach(k => { remote[k] = data[k] || []; });
+                await putRecord(remote);
+                adoptRemote(remote);
+                cacheLocal();
+                // Don't repaint over an inline edit the user has open right now.
+                if (!document.querySelector('.extras-item.editing')) renderAll();
+            } catch (e) {
+                // Network/API failure: re-queue what we tried to send (merged with
+                // anything newly dirtied) and retry later — on reconnect, tab
+                // focus, the next edit, or the retry timer.
+                console.log('List save deferred (will retry):', e);
+                sending.forEach(k => dirty.add(k));
+                cacheLocal();
+                scheduleRetry();
+            } finally {
+                flushing = false;
+                if (dirty.size) flush();   // pick up edits made during this round
+            }
+        }
+
+        // Mark a list changed, mirror locally at once, and kick off a save.
+        function mutate(key) {
+            dirty.add(key);
+            cacheLocal();          // durable immediately, even if the network is down
+            renderTotals();
+            flush();
+        }
+
+        let retryTimer = null;
+        function scheduleRetry() {
+            if (retryTimer) return;
+            retryTimer = setTimeout(() => { retryTimer = null; if (dirty.size) flush(); }, 15000);
+        }
+        // Re-sync whenever we regain connectivity or the app returns to the
+        // foreground. A PWA resumes from memory instead of reloading, so without
+        // this a change made on another device (e.g. marking a wishlist item done
+        // on a laptop) would never show up here. load() also pushes any pending
+        // local edits, so this covers both directions.
+        window.addEventListener('online', () => load());
+        document.addEventListener('visibilitychange', () => { if (!document.hidden) load(); });
+        window.addEventListener('pageshow', () => load());   // bfcache / PWA resume
+
+        // For from/to lists (flights) build the display name as "מוצא → יעד"
+        function normalizeItem(it) {
+            if (('from' in it) || ('to' in it)) {
+                const f = (it.from || '').trim(), t = (it.to || '').trim();
+                it.name = (f || t) ? `${f} ← ${t}` : '';
+            }
+            return it;
+        }
+
+        // Add-form handlers
+        document.querySelectorAll('.add-form').forEach(form => {
+            const key = form.dataset.listTarget;
+            const fieldInputs = Array.from(form.querySelectorAll('.add-input'));
+            const btn = form.querySelector('.add-btn');
+
+            async function add() {
+                const item = {};
+                fieldInputs.forEach(inp => { item[inp.dataset.field] = inp.value.trim(); });
+                normalizeItem(item);
+                if (!item.name) { fieldInputs[0].focus(); return; }
+
+                if (!data[key]) data[key] = [];
+                data[key].push(item);
+                renderList(key);
+                fieldInputs.forEach(inp => inp.value = '');
+                fieldInputs[0].focus();
+                mutate(key);
+            }
+
+            btn.addEventListener('click', add);
+            fieldInputs.forEach(inp => {
+                inp.addEventListener('keydown', e => { if (e.key === 'Enter') add(); });
+            });
+        });
+
+        function saveAndRerender(key) {
+            renderList(key);
+            mutate(key);
+        }
+
+        // Click handler (delete / edit / save-edit / cancel-edit) per list container
+        lists.forEach(container => {
+            const key = container.dataset.listKey;
+            container.addEventListener('click', async e => {
+                const del = e.target.closest('.item-del');
+                if (del) {
+                    const idx = Number(del.dataset.index);
+                    if (!data[key] || !data[key][idx]) return;
+                    const name = data[key][idx].name || 'הפריט';
+                    const ok = await confirmDialog(`למחוק את "${name}"?`);
+                    if (!ok) return;
+                    data[key].splice(idx, 1);
+                    saveAndRerender(key);
+                    return;
+                }
+                const edit = e.target.closest('.item-edit');
+                if (edit) {
+                    const itemEl = edit.closest('.extras-item');
+                    enterEdit(itemEl, key, Number(edit.dataset.index));
+                    return;
+                }
+                const save = e.target.closest('.edit-save');
+                if (save) {
+                    const itemEl = save.closest('.extras-item');
+                    const idx = Number(itemEl.dataset.index);
+                    // Start from the existing item so fields the edit form doesn't
+                    // expose (e.g. link, done) are preserved instead of dropped.
+                    const updated = { ...(data[key][idx] || {}) };
+                    itemEl.querySelectorAll('.add-input').forEach(inp => {
+                        updated[inp.dataset.field] = inp.value.trim();
+                    });
+                    normalizeItem(updated);
+                    if (!updated.name) { itemEl.querySelector('.add-input').focus(); return; }
+                    data[key][idx] = updated;
+                    await saveAndRerender(key);
+                    return;
+                }
+                const cancel = e.target.closest('.edit-cancel');
+                if (cancel) {
+                    renderList(key);   // discard changes, repaint from model
+                    return;
+                }
+            });
+
+            // Toggle the wishlist "done" checkbox → strike through + persist
+            container.addEventListener('change', e => {
+                const box = e.target.closest('.item-check');
+                if (!box) return;
+                const idx = Number(box.dataset.index);
+                if (!data[key] || !data[key][idx]) return;
+                data[key][idx].done = box.checked;
+                const itemEl = box.closest('.extras-item');
+                if (itemEl) itemEl.classList.toggle('done', box.checked);
+                mutate(key);   // save without a full repaint
+            });
+
+            // Enter saves an inline edit, Escape cancels
+            container.addEventListener('keydown', e => {
+                const itemEl = e.target.closest('.extras-item.editing');
+                if (!itemEl) return;
+                if (e.key === 'Enter') { e.preventDefault(); itemEl.querySelector('.edit-save').click(); }
+                else if (e.key === 'Escape') { itemEl.querySelector('.edit-cancel').click(); }
+            });
+        });
+
+        async function load() {
+            try {
+                const record = await fetchRecord();
+                // Keep any locally-made edits that haven't synced yet (dirty keys)
+                // and let the server be the source of truth for everything else.
+                adoptRemote(record);
+                cacheLocal();
+            } catch (e) {
+                console.log('List load error (using local copy):', e);
+            }
+            // Don't repaint over an inline edit the user has open right now.
+            if (!document.querySelector('.extras-item.editing')) renderAll();
+            if (dirty.size) flush();   // push edits queued while offline
+        }
+
+        // Let the pull-to-refresh gesture trigger a fresh sync.
+        window.refreshTripData = load;
+
+        // Seed instantly from the offline mirror so content shows up even before
+        // (or without) the network — then hydrate/merge from the shared bin.
+        const cached = readCache();
+        if (cached) data = cached;
+        renderAll();
+        load();
+    })();
+
+    // Currency quick-convert — live rates (units per 1 USD) from exchangerate-api.com's
+    // free open endpoint (no key). Refreshes on load + every 30 min; cached for offline.
+    (function() {
+        const CURRENCIES = ['USD', 'ILS', 'GBP', 'EUR'];
+        // Offline fallback — used only until the first successful fetch / when no cache exists
+        let RATES = { USD: 1, ILS: 3.7, GBP: 0.79, EUR: 0.92 };
+        const CACHE_KEY = 'london-rates';
+        const REFRESH_MS = 30 * 60 * 1000;
+
+        const inputs = Array.from(document.querySelectorAll('.currency-row input[data-cur]'));
+        const statusEl = document.getElementById('currencyStatus');
+        if (!inputs.length) return;
+
+        let lastSource = null;   // remember which field the user typed in, to re-convert on rate update
+
+        function fmt(n) {
+            if (!isFinite(n)) return '';
+            return Number(n.toFixed(2)).toLocaleString('en-US', { maximumFractionDigits: 2 });
+        }
+
+        function recalc(source) {
+            if (!source) return;
+            const raw = parseFloat(source.value.replace(/,/g, ''));
+            if (isNaN(raw)) {
+                inputs.forEach(inp => { if (inp !== source) inp.value = ''; });
+                return;
+            }
+            const usd = raw / RATES[source.dataset.cur];
+            inputs.forEach(inp => {
+                if (inp === source) return;
+                inp.value = fmt(usd * RATES[inp.dataset.cur]);
+            });
+        }
+
+        function setStatus(text) { if (statusEl) statusEl.textContent = text; }
+
+        let lastUpdatedMs = null, lastLive = false;
+
+        // Hebrew "how long ago" from a timestamp
+        function timeAgo(ms) {
+            const diff = Date.now() - ms;
+            if (!isFinite(diff) || diff < 0) return '';
+            const min = Math.round(diff / 60000);
+            if (min < 1) return 'ממש עכשיו';
+            if (min === 1) return 'לפני דקה';
+            if (min < 60) return `לפני ${min} דקות`;
+            const hrs = Math.round(min / 60);
+            if (hrs === 1) return 'לפני שעה';
+            if (hrs === 2) return 'לפני שעתיים';
+            if (hrs < 24) return `לפני ${hrs} שעות`;
+            const days = Math.round(hrs / 24);
+            if (days === 1) return 'לפני יום';
+            if (days === 2) return 'לפני יומיים';
+            return `לפני ${days} ימים`;
+        }
+
+        function renderStatus() {
+            if (lastUpdatedMs == null) { setStatus('שערים משוערים'); return; }
+            const ago = timeAgo(lastUpdatedMs);
+            setStatus(lastLive
+                ? `שערים חיים · עודכנו ${ago}`
+                : `שערים שמורים (לא מקוון) · עודכנו ${ago}`);
+        }
+
+        function applyRates(rates, updatedMs, live) {
+            CURRENCIES.forEach(c => { if (typeof rates[c] === 'number' && rates[c] > 0) RATES[c] = rates[c]; });
+            if (lastSource) recalc(lastSource);
+            lastUpdatedMs = updatedMs || null;
+            lastLive = live;
+            renderStatus();
+        }
+
+        // Seed instantly from cache so it works offline / before the network responds
+        try {
+            const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+            if (cached && cached.rates) applyRates(cached.rates, cached.updated, false);
+        } catch (_) {}
+
+        async function refresh() {
+            try {
+                const res = await fetch('https://open.er-api.com/v6/latest/USD', { cache: 'no-store' });
+                if (!res.ok) throw new Error('http ' + res.status);
+                const json = await res.json();
+                if (json.result !== 'success' || !json.rates) throw new Error('bad payload');
+                const picked = {};
+                CURRENCIES.forEach(c => { if (typeof json.rates[c] === 'number') picked[c] = json.rates[c]; });
+                const updated = json.time_last_update_unix ? json.time_last_update_unix * 1000 : Date.now();
+                applyRates(picked, updated, true);
+                try { localStorage.setItem(CACHE_KEY, JSON.stringify({ rates: picked, updated })); } catch (_) {}
+            } catch (e) {
+                console.log('Rates fetch error:', e);
+                if (statusEl && !localStorage.getItem(CACHE_KEY)) setStatus('שערים משוערים (לא הצליח לעדכן)');
+            }
+        }
+
+        inputs.forEach(inp => inp.addEventListener('input', () => { lastSource = inp; recalc(inp); }));
+
+        refresh();                        // on every page load / refresh
+        setInterval(refresh, REFRESH_MS); // and every 30 minutes while open
+        setInterval(renderStatus, 60000); // keep the "time ago" label current each minute
+    })();
+
+    // Highlight today's calendar cell (neon green) — only while the trip is on,
+    // in 2026. Cell dates are "D/M"; re-check hourly so it advances at midnight.
+    (function () {
+        const cells = Array.from(document.querySelectorAll('.cal-cell'))
+            .map(cell => ({ cell, date: (cell.querySelector('.cal-date') || {}).textContent }))
+            .filter(c => c.date);
+        function mark() {
+            const now = new Date();
+            if (now.getFullYear() !== 2026) return;
+            const key = now.getDate() + '/' + (now.getMonth() + 1);
+            cells.forEach(({ cell, date }) => cell.classList.toggle('today', date.trim() === key));
+        }
+        mark();
+        setInterval(mark, 3600000); // hourly, so it moves on to the next day
+    })();
+
+    // Block copy / cut / right-click context menu everywhere except inside
+    // editable fields (so users can still edit their own list entries).
+    (function() {
+        const editable = t => t && t.closest && t.closest('input, textarea');
+        ['copy', 'cut', 'contextmenu'].forEach(evt => {
+            document.addEventListener(evt, e => {
+                if (!editable(e.target)) e.preventDefault();
+            });
+        });
+    })();
+
+    // Disable pinch-zoom and double-tap zoom (iOS ignores user-scalable=no,
+    // so block the gesture + rapid double-tap here too).
+    (function() {
+        document.addEventListener('gesturestart', e => e.preventDefault(), { passive: false });
+        document.addEventListener('gesturechange', e => e.preventDefault(), { passive: false });
+        document.addEventListener('gestureend', e => e.preventDefault(), { passive: false });
+        document.addEventListener('touchmove', e => {
+            if (e.touches.length > 1) e.preventDefault();   // multi-finger = pinch
+        }, { passive: false });
+        let lastTouch = 0;
+        document.addEventListener('touchend', e => {
+            const now = e.timeStamp;
+            if (now - lastTouch < 300) e.preventDefault();   // double-tap zoom
+            lastTouch = now;
+        }, { passive: false });
+    })();
+
+    // Pull-to-refresh: drag down from the very top to re-sync with the shared
+    // bin. Needed mainly in the installed PWA, which resumes from memory and
+    // otherwise won't pick up changes made on another device.
+    (function() {
+        const THRESHOLD = 64;   // px pulled (after resistance) to trigger
+        const MAX = 96;         // cap how far the indicator travels
+        const HIDDEN = -70;     // resting position above the screen
+
+        const el = document.createElement('div');
+        el.className = 'ptr';
+        el.setAttribute('aria-hidden', 'true');
+        el.innerHTML = '<div class="ptr-spin"></div>';
+        document.body.appendChild(el);
+        const spin = el.querySelector('.ptr-spin');
+
+        let startY = 0, pulling = false, dist = 0, refreshing = false;
+
+        const atTop = () => (window.scrollY || document.documentElement.scrollTop || 0) <= 0;
+
+        function place(y, opacity) {
+            el.style.transform = `translateY(${y}px)`;
+            el.style.opacity = opacity;
+        }
+        function reset() {
+            el.classList.remove('spin', 'ready');
+            place(HIDDEN, 0);
+            spin.style.transform = '';
+            dist = 0; pulling = false;
+        }
+
+        async function doRefresh() {
+            refreshing = true;
+            el.classList.add('spin');
+            el.classList.remove('ready');
+            place(THRESHOLD, 1);
+            spin.style.transform = '';
+            try { if (window.refreshTripData) await window.refreshTripData(); }
+            catch (_) {}
+            // keep the spinner up briefly so the refresh reads as intentional
+            setTimeout(() => { refreshing = false; reset(); }, 500);
+        }
+
+        window.addEventListener('touchstart', e => {
+            if (refreshing || e.touches.length !== 1 || !atTop()) { pulling = false; return; }
+            startY = e.touches[0].clientY;
+            pulling = true; dist = 0;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', e => {
+            if (!pulling || refreshing) return;
+            const d = e.touches[0].clientY - startY;
+            if (d <= 0 || !atTop()) { reset(); return; }
+            dist = Math.min(MAX, d * 0.5);   // rubber-band resistance
+            place(Math.min(dist, THRESHOLD) - 6, Math.min(1, dist / THRESHOLD));
+            spin.style.transform = `rotate(${dist * 3}deg)`;
+            el.classList.toggle('ready', dist >= THRESHOLD);
+            if (e.cancelable) e.preventDefault();   // suppress overscroll bounce
+        }, { passive: false });
+
+        window.addEventListener('touchend', () => {
+            if (!pulling || refreshing) return;
+            pulling = false;
+            if (dist >= THRESHOLD) doRefresh();
+            else reset();
+        });
+
+        reset();
+    })();
+
+    // Register service worker for offline support (installable PWA)
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js').catch((e) => {
+                console.log('SW registration failed:', e);
+            });
+        });
+    }
+
+</script>
+
+</body>
+</html>
